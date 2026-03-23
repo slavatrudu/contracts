@@ -4,25 +4,31 @@ package auth;
 option go_package = "github.com/slavatrudu/contracts/auth/go;auth";
 
 import "google/protobuf/empty.proto";
+import "auth_model.proto";
 
 // Auth
 service Auth {
   // Register
   rpc Register(RegisterRequest) returns (google.protobuf.Empty);
   // Login
-  rpc Login(LoginRequest) returns (TokenPair);
+  rpc Login(LoginRequest) returns (LoginResponse);
   // Refresh
-  rpc Refresh(RefreshRequest) returns (TokenPair);
+  rpc Refresh(RefreshRequest) returns (RefreshResponse);
   // Validate
   rpc Validate(ValidateRequest) returns (ValidateResponse);
   // Logout
-  rpc Logout(RefreshRequest) returns (google.protobuf.Empty);
+  rpc Logout(LogoutRequest) returns (google.protobuf.Empty);
 }
 
 message RegisterRequest {
-  string login = 1;
-  string email = 2;
-  string password = 3;
+  uint64 id = 1;
+  string login = 2;
+  string email = 3;
+  string password = 4;
+}
+
+message DeleteRequest {
+  uint64 id = 1;
 }
 
 message LoginRequest {
@@ -34,6 +40,10 @@ message RefreshRequest {
   string refresh_token = 1;
 }
 
+message LogoutRequest {
+  string refresh_token = 1;
+}
+
 message ValidateRequest {
   string access_token = 1;
 }
@@ -42,7 +52,10 @@ message ValidateResponse {
   uint64 user_id = 1;
 }
 
-message TokenPair {
-  string access_token = 1;
-  string refresh_token = 2;
+message LoginResponse {
+    TokenPair token_pair = 1;
+}
+
+message RefreshResponse {
+  TokenPair token_pair = 1;
 }

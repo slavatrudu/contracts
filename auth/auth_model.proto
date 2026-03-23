@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package auth;
+option go_package = "github.com/slavatrudu/contracts/auth/go;auth";
+
+// TokenPair
+message TokenPair {
+    string access_token = 1;
+    string refresh_token = 2;
+}
