@@ -478,13 +478,15 @@ const file_auth_service_proto_rawDesc = "" +
 	"token_pair\x18\x01 \x01(\v2\x0f.auth.TokenPairR\ttokenPair\"A\n" +
 	"\x0fRefreshResponse\x12.\n" +
 	"\n" +
-	"token_pair\x18\x01 \x01(\v2\x0f.auth.TokenPairR\ttokenPair2\x9d\x02\n" +
+	"token_pair\x18\x01 \x01(\v2\x0f.auth.TokenPairR\ttokenPair2\xd8\x02\n" +
 	"\x04Auth\x129\n" +
 	"\bRegister\x12\x15.auth.RegisterRequest\x1a\x16.google.protobuf.Empty\x120\n" +
 	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\x126\n" +
 	"\aRefresh\x12\x14.auth.RefreshRequest\x1a\x15.auth.RefreshResponse\x129\n" +
 	"\bValidate\x12\x15.auth.ValidateRequest\x1a\x16.auth.ValidateResponse\x125\n" +
-	"\x06Logout\x12\x13.auth.LogoutRequest\x1a\x16.google.protobuf.EmptyB.Z,github.com/slavatrudu/contracts/auth/go;authb\x06proto3"
+	"\x06Logout\x12\x13.auth.LogoutRequest\x1a\x16.google.protobuf.Empty\x129\n" +
+	"\n" +
+	"DeleteUser\x12\x13.auth.DeleteRequest\x1a\x16.google.protobuf.EmptyB.Z,github.com/slavatrudu/contracts/auth/go;authb\x06proto3"
 
 var (
 	file_auth_service_proto_rawDescOnce sync.Once
@@ -520,13 +522,15 @@ var file_auth_service_proto_depIdxs = []int32{
 	3,  // 4: auth.Auth.Refresh:input_type -> auth.RefreshRequest
 	5,  // 5: auth.Auth.Validate:input_type -> auth.ValidateRequest
 	4,  // 6: auth.Auth.Logout:input_type -> auth.LogoutRequest
-	10, // 7: auth.Auth.Register:output_type -> google.protobuf.Empty
-	7,  // 8: auth.Auth.Login:output_type -> auth.LoginResponse
-	8,  // 9: auth.Auth.Refresh:output_type -> auth.RefreshResponse
-	6,  // 10: auth.Auth.Validate:output_type -> auth.ValidateResponse
-	10, // 11: auth.Auth.Logout:output_type -> google.protobuf.Empty
-	7,  // [7:12] is the sub-list for method output_type
-	2,  // [2:7] is the sub-list for method input_type
+	1,  // 7: auth.Auth.DeleteUser:input_type -> auth.DeleteRequest
+	10, // 8: auth.Auth.Register:output_type -> google.protobuf.Empty
+	7,  // 9: auth.Auth.Login:output_type -> auth.LoginResponse
+	8,  // 10: auth.Auth.Refresh:output_type -> auth.RefreshResponse
+	6,  // 11: auth.Auth.Validate:output_type -> auth.ValidateResponse
+	10, // 12: auth.Auth.Logout:output_type -> google.protobuf.Empty
+	10, // 13: auth.Auth.DeleteUser:output_type -> google.protobuf.Empty
+	8,  // [8:14] is the sub-list for method output_type
+	2,  // [2:8] is the sub-list for method input_type
 	2,  // [2:2] is the sub-list for extension type_name
 	2,  // [2:2] is the sub-list for extension extendee
 	0,  // [0:2] is the sub-list for field type_name

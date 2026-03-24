@@ -18,6 +18,8 @@ service Auth {
   rpc Validate(ValidateRequest) returns (ValidateResponse);
   // Logout
   rpc Logout(LogoutRequest) returns (google.protobuf.Empty);
+  // DeleteUser
+  rpc DeleteUser(DeleteRequest) returns (google.protobuf.Empty);
 }
 
 message RegisterRequest {
